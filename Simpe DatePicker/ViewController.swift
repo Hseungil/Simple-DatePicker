@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         myDatePicker.locale = locale
         
         // DatePicker 모드 설종
-        myDatePicker.datePickerMode = UIDatePicker.Mode.date
+        myDatePicker.datePickerMode = UIDatePicker.Mode.time
     }
 
     @IBAction func changeDatePicker(_ sender: Any) {
@@ -31,7 +31,8 @@ class ViewController: UIViewController {
         
         // Date 형을 문자형으로 변환
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm EEE"
+        //formatter.dateFormat = "yyyy-MM-dd HH:mm EEE"
+        formatter.dateFormat = "a HH:mm"
         outLabel.text = formatter.string(from: selectedData)
     }
 }
